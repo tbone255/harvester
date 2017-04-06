@@ -1,7 +1,9 @@
-back-end
-mysql database
-python webserver
-python utility
+back-end:
+  database- SQL
+  python: 
+    webserver- Tornado
+    utility
+  
 
-front end
-?
+front-end:
+  ?
