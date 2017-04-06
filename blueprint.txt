@@ -1,0 +1,7 @@
+back-end
+mysql database
+python webserver
+python utility
+
+front end
+?
