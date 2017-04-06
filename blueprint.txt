@@ -2,8 +2,19 @@ back-end:
   database- SQL
   python: 
     webserver- Tornado
-    utility
-  
+    database utility
+
+sql:
+  tables:
+    - vegetable
+    - event with timestamp (harvest, plant, fertilize, water, etc)
+    - planter (enumeration of planters and what veg plants belong there)
+
 
 front-end:
-  ?
+  html
+  scss
+  bootstrap
+  angular2
+  webpack
+  npm
