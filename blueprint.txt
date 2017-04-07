@@ -17,4 +17,6 @@ front-end:
   bootstrap
   angular2
   webpack
-  npm
+  npm 
+  
+  View by vegetables, view by planter, view by date (by day month and year)
