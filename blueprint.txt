@@ -24,3 +24,5 @@ front-end:
   
   View by vegetables, view by planter, view by date (by day month and year), (by how much harvested?)
     (can have ability to 'group' veggies to see net weight for specific veggie over some span of time)
+
+  Have graphs?
