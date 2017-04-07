@@ -1,7 +1,7 @@
 back-end:
-  database- SQL
+  database- MySQL
   python: 
-    webserver- Tornado
+    webserver - Tornado
     database utility
 
 sql:
@@ -9,9 +9,12 @@ sql:
     - vegetable
     - event with timestamp (harvest, plant, fertilize, water, etc)
     - planter (enumeration of planters and what veg plants belong there)
+    - harvest table (what was harvested (using planter id?), when was is harvested (event id?, how much did it weigh/how many units?)
 
 
 front-end:
+  TODO: come up with sketch of website layout
+  
   html
   scss
   bootstrap
@@ -19,4 +22,5 @@ front-end:
   webpack
   npm 
   
-  View by vegetables, view by planter, view by date (by day month and year)
+  View by vegetables, view by planter, view by date (by day month and year), (by how much harvested?)
+    (can have ability to 'group' veggies to see net weight for specific veggie over some span of time)
