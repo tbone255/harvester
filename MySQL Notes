@@ -1,0 +1,117 @@
+################
+# Installation #
+################
+
+Setting up MySQL (OSX):
+- Install MySQL here: https://dev.mysql.com/downloads/file/?id=467574
+- Keep note of the password (root_pw)
+- Once installed, start it up and hit `Start MySQL Server`
+
+
+############
+# Database #
+############
+
+Fire up terminal
+
+$ mysql -u root -p
+Enter password: <root_pw>
+
+You will be greeted with a mysql prompt:
+
+mysql>
+
+Before you do anything, you must set a new password:
+
+mysql> SET PASSWORD = PASSWORD('your_new_root_pw');
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+And now, you can list the databases
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+
+Create yourself a new database:
+
+mysql> create database harvester;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| harvester          |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+
+Starting using your database:
+
+mysql> use harvester;
+Database changed
+
+Create a table:
+
+mysql> CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20));
+Query OK, 0 rows affected (0.02 sec)
+
+List tables:
+
+mysql> show tables;
++---------------------+
+| Tables_in_harvester |
++---------------------+
+| pet                 |
++---------------------+
+1 row in set (0.00 sec)
+
+Describe table:
+
+mysql> describe pet;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| name  | varchar(20) | YES  |     | NULL    |       |
+| owner | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+
+##########
+# PYTHON #
+##########
+
+In this folder you will find an example of how you would connect to the mysql database and list the tables using a python script `test_database.py`
+
+Args:
+Form a database URI like so:
+mysql://<user>:<password>@localhost:<port>/<db>
+
+In this case:
+user: root
+password: the password you set for root
+port: 3306 (default)
+db: harvester (we created this)
+
+$ python test_database.py --db_uri=mysql://root:*******@localhost:3306/harvester
+('pet',)
+
+And there you have it.
+
+At this point, you should be able to:
+
+1. Install MySQL on your localhost
+2. Spin up a MySQL server
+3. Change the root user password
+4. Create a database
+5. Create a table
+6. Use a simple python script to connect to the database and list the tables
