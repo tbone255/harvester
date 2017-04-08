@@ -22,10 +22,10 @@ cursor.execute('''
 	);
 
 	CREATE TABLE Nutrition (
-		NutritionID INT NOT NULL AUTO_INCREMENT,
-		EventID INT NOT NULL,
-		Water BOOLEAN,
-		Fertilizer VARCHAR(256),
+		NutritionID INT 	NOT NULL AUTO_INCREMENT,
+		EventID 	INT 	NOT NULL,
+		Water 		BOOLEAN,
+		Fertilizer 	VARCHAR(256),
 		PRIMARY KEY (NutritionID),
 		FOREIGN KEY (EventID) REFERENCES EventLog(EventID)
 	);
