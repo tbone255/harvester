@@ -30,11 +30,30 @@
   			</div>
 		</nav>
 
-		<ul>
-			{% for entry in entries %}
-  				<li>{{ entry }}</li>
-			{% end %}
-		</ul>
+		<div class="container">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>EventID</th>
+						<th>Event</th>
+						<th>Vegetable</th>
+						<th>Timelog</th>
+						<th>Planter</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for entry in entries %}
+						<tr>
+		  					<td>{{ entry["EventID"] }}</td>
+		  					<td>{{ entry["Event"] }}</td>
+		  					<td>{{ entry["Vegetable"] }}</td>
+		  					<td>{{ entry["Timelog"] }}</td>
+		  					<td>{{ entry["Planter"] }}</td>
+		  				</tr>
+					{% end %}
+				</tbody>
+			</table>
+		</div>
 
 	</body>
 

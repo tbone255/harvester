@@ -13,15 +13,13 @@ c.execute(' SELECT * FROM EventLog ')
 l = c.fetchall()
 rows = [dict(i) for i in l]
 
+print rows
 
 
 
 class MainHandler(tornado.web.RequestHandler):
 	def get(self):
-		c.execute( 'SELECT * FROM EventLog' )
-		l = c.fetchall()
-		rows = [dict(i) for i in l]
-		self.render("index.html", title = "HarvesterNew", entries = rows)
+		self.render("index.html", entries = rows)
 
 def make_app():
 	return tornado.web.Application([
