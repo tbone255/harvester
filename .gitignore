@@ -1,0 +1,12 @@
+.git/
+*~
+.#*
+@*
+*.swp
+*.swo
+*.pyc
+__pycache__
+*.bak
+*.orig
+*.dat
+*.DS_Store
