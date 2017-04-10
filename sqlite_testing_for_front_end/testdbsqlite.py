@@ -5,11 +5,11 @@ c = conn.cursor()
 
 c.execute('''
 	CREATE TABLE EventLog (
-		EventID 	INTEGER 		NOT NULL PRIMARY KEY AUTOINCREMENT,
+		EventID 	INTEGER 	NOT NULL PRIMARY KEY AUTOINCREMENT,
 		Event 		VARCHAR(512) 	NOT NULL,
 		Vegetable 	VARCHAR(128) 	NOT NULL,
-		Timelog 	DATETIME 		NOT NULL,
-		Planter 	INT 			NOT NULL
+		Timelog 	DATETIME 	NOT NULL,
+		Planter 	INT 		NOT NULL
 	);
 ''')
 
