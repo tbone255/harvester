@@ -17,11 +17,7 @@ c.execute(' SELECT * FROM EventLog ')
 l = c.fetchall()
 rows = [dict(i) for i in l]
 
-for r in rows:
-	print '----------------------------------------------------'
-	print r
-
-print '----------------------------------------------------'
+print rows
 
 
 
