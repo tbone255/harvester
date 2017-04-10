@@ -29,22 +29,24 @@ class MainHandler(tornado.web.RequestHandler):
 	def get(self):
 		self.render("index.html", entries = rows)
 
+
 def make_app():
 	return tornado.web.Application([
 		(r'/', MainHandler),
-		(r'/(tomato.png)', tornado.web.StaticFileHandler, {'path':'./'}),
+		(r'/(Tomatoes.png)', tornado.web.StaticFileHandler, {'path':'./'}),
 	])
 
 
 
 
 
-
+#looks for a signal
 def signal_handler(signum, frame):
 	global is_closing
 	logging.info('exiting, please wait')
 	is_closing = True
 
+#if is_closing is true then it closes tornado
 def exit():
 	global is_closing
 	if(is_closing):
@@ -55,7 +57,10 @@ def exit():
 if __name__ == "__main__":
 	tornado.options.parse_command_line()
 	signal.signal(signal.SIGINT, signal_handler)
+
 	app = make_app()
 	app.listen(8888)
+
 	tornado.ioloop.PeriodicCallback(exit, 100).start()
+
 	tornado.ioloop.IOLoop.current().start()
