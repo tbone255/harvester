@@ -24,7 +24,8 @@ class MainHandler(tornado.web.RequestHandler):
 def make_app():
 	return tornado.web.Application([
 		(r'/', MainHandler),
-		])
+		(r'/(tomato.png)', tornado.web.StaticFileHandler, {'path':'./'}),
+	])
 
 app = make_app()
 app.listen(8888)
