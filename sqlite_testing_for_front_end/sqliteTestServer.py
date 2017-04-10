@@ -5,8 +5,8 @@ import tornado.ioloop
 import tornado.options
 import tornado.web
 
-conn = sqlite3.connect('sqlitetest.db')
-conn.row_factory = sqlite3.Row
+conn = sqlite3.connect('sqlitetest.db') #database file
+conn.row_factory = sqlite3.Row #row object
 c = conn.cursor()
 
 c.execute(' SELECT * FROM EventLog ')
@@ -32,4 +32,3 @@ app.listen(8888)
 tornado.ioloop.IOLoop.current().start()
 
 conn.close()
-
