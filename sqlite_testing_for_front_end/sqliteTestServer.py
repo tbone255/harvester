@@ -17,10 +17,6 @@ c.execute(' SELECT * FROM EventLog ')
 l = c.fetchall()
 rows = [dict(i) for i in l]
 
-print rows
-
-
-
 class MainHandler(tornado.web.RequestHandler):
 	def get(self):
 		self.render("index.html", entries = rows)
@@ -30,6 +26,7 @@ def make_app():
 	return tornado.web.Application([
 		(r'/', MainHandler),
 		(r'/(Tomatoes.png)', tornado.web.StaticFileHandler, {'path':'./'}),
+		(r'/(custom.css)', tornado.web.StaticFileHandler, {'path': './'}),
 	])
 
 
