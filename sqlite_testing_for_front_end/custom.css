@@ -1,7 +1,8 @@
 
 .navbar {
         text-align: center;
-        width: 980px;
+        padding-left:220px;
+        padding-right:220px;
         margin-right: auto;
         margin-left:auto;
 }
