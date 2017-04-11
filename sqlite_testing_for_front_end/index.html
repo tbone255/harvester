@@ -39,6 +39,7 @@
 						<th>EventID</th>
 						<th>Event</th>
 						<th>Vegetable</th>
+						<th></th>
 						<th>Timelog</th>
 						<th>Planter</th>
 					</tr>
@@ -48,7 +49,8 @@
 						<tr>
 		  					<td>{{ entry["EventID"] }}</td>
 		  					<td>{{ entry["Event"] }}</td>
-		  					<td>{{ entry["Vegetable"] }} <img src="{{ entry["Vegetable"] }}.png", height=50, width=50></td>
+		  					<td>{{ entry["Vegetable"] }} </td>
+		  					<td><img src="{{ entry["Vegetable"] }}.png", height=50, width=50></td>
 		  					<td>{{ entry["Timelog"] }}</td>
 		  					<td>{{ entry["Planter"] }}</td>
 		  				</tr>
