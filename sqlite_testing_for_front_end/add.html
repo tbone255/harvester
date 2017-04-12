@@ -5,15 +5,18 @@
   Add Event
 </head>
 
-<form action="/add">
-Event: <select name="event">
+<body>
+
+<form action="/add" method="post">
+Event: <select name="event" id="event" required>
            <option value="Planted">Planted</option>
            <option value="Harvested">Harvested</option>
        </select>
-Vegetable: <select name="veg">
+Vegetable: <select name="veg" id="veg" required>
                <option value="Tomatoes">Tomatoes</option>
                <option value="Egg">Egg</option>
            </select>
-Planter:   <input type="number" name="planter"></input>
+Planter:   <input type="number" name="planter" id="planter" required></input>
 <input type="submit" value="Add Event">
+</body>
 </html>
