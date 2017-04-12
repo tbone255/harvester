@@ -22,11 +22,15 @@ class MainHandler(tornado.web.RequestHandler):
 		self.render("index.html", entries = rows)
 
 
+class AddHandler(tornado.web.RequestHandler):
+	def get(self):
+		self.render("add.html")
 def make_app():
 	return tornado.web.Application([
 		(r'/', MainHandler),
 		(r'/(Tomatoes.png)', tornado.web.StaticFileHandler, {'path':'./'}),
 		(r'/(custom.css)', tornado.web.StaticFileHandler, {'path': './'}),
+		(r'/add', AddHandler)
 	])
 
 
