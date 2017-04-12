@@ -1,17 +1,37 @@
-
-.navbar {
-        padding-left:210px;
-        padding-right:210px;
-        margin-right: auto;
-        margin-left:auto;
+.navbar-header {
+    padding-left: 125px
 }
 
-.container{
+.navbar-cog {
+	padding-right: 125px;
+}
+
+.tab-container {
 	width: 980px;
 	margin-right: auto;
 	margin-left: auto;
 }
 
+.table-container {
+	width: 980px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.table-container tr td{
+	height: 55px;
+}
+
+tr:hover .btn-group {
+	display: inline;
+}
+
 .veggie-pic img {
 	text-align: center;
 }
+
+.btn-group {
+	display: none;
+}
+
+
