@@ -34,4 +34,9 @@ tr:hover .btn-group {
 	display: none;
 }
 
+.form-group-inputs {
+	padding-left: 125px;
+	width: 500px;
+}
+
 

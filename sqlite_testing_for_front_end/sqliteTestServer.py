@@ -35,6 +35,7 @@ class AddHandler(tornado.web.RequestHandler):
 		c.execute("INSERT INTO EventLog (Event, Vegetable, Timelog, Planter) VALUES (\'%s\',\'%s\',\'%s\',%d);" % (event, veg, timelog, planter))
 		conn.commit()
 		self.redirect("/add")
+		
 def make_app():
 	return tornado.web.Application([
 		(r'/', MainHandler),
