@@ -1,5 +1,4 @@
 import sqlite3
-import json
 import tornado.httpserver
 import tornado.ioloop
 import tornado.options
