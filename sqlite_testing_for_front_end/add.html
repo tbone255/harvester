@@ -38,40 +38,46 @@
     					</form>
 	  			</div>
 			</nav>
-		<div>
+		</div>
 
 				<!--tab pagination div-->
 		<div class="tab-container">
 			<ul class="nav nav-tabs">
-				<li><a href="/add">Events</a></li>
-				<li class="active"><a href="#">Add</a></li>
+				<li><a href="/">Events</a></li>
+				<li class="active"><a href="/add">Add</a></li>
 				<li><a href="#">Remove</a></li>
 			</ul>
 			<br>
 		</div>
 
-		<form>
+		<ul class="list-group">
+			<li class="list-group-item">
+				<form action="/add" method="post">
 
-			<div class="form-group-inputs">
-				<label for="Event">Event Description:</label>
-				<input type="text" class="form-control" id="Event">
-			</div>
+					<div class="form-group-inputs">
+						<label for="event">Event Description:</label>
+						<input name="event" type="text" class="form-control" id="event" placeholder="E.g. Planted tomatoes">
+					</div>
 
-			<div class="form-group-inputs">
-				<label for="Event">Event Description:</label>
-				<input type="text" class="form-control" id="Event">
-			</div>
+					<div class="form-group-inputs">
+						<label for="veg">Vegetable</label>
+						<input name="veg" type="text" class="form-control" id="veg" placeholder="Enter vegetable">
+					</div>
 
-			<div class="form-group-inputs">
-				<label for="Event">Event Description:</label>
-				<input type="text" class="form-control" id="Event">
-			</div>
+					<div class="form-group-inputs">
+						<label for="planter">Planter</label>
+						<input name="planter" type="number" class="form-control" id="planter" placeholder="Enter Planter">
+					</div>
+					<br>
+					<div class="form-group-inputs"><button type="submit" class="btn btn-default">Submit</button></div>
 
-		</form>
+				</form>
+			</li>
+		</ul>
 
 	</body>
 
-
+</html>
 
 
 

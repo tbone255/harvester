@@ -18,6 +18,18 @@
 	margin-left: auto;
 }
 
+.form-group-inputs {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.list-group{
+	width:  600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .table-container tr td{
 	height: 55px;
 }
@@ -32,11 +44,6 @@ tr:hover .btn-group {
 
 .btn-group {
 	display: none;
-}
-
-.form-group-inputs {
-	padding-left: 125px;
-	width: 500px;
 }
 
 
