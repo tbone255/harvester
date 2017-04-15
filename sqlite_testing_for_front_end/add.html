@@ -40,11 +40,20 @@
 			</nav>
 		</div>
 
-				<!--tab pagination div-->
+		<!--tab pagination div-->
 		<div class="tab-container">
 			<ul class="nav nav-tabs">
 				<li><a href="/">Events</a></li>
-				<li class="active"><a href="/add">Add</a></li>
+				<li class="dropdown">
+					<li class="active">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Add<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="/add_harvest">Add a Harvest</a></li>
+							<li><a href="/add_nutrition">Add Nutritional Information</a></li>
+							<li><a href="/add_plant">Add a New Plant</a></li>
+						</ul>
+					</li>
+				</li>
 				<li><a href="#">Remove</a></li>
 			</ul>
 			<br>
