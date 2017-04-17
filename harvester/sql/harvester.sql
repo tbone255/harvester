@@ -5,9 +5,7 @@ CREATE TABLE `plant` (
     `type`              VARCHAR(32)  NOT NULL,
     `scientific_name`   VARCHAR(128) NOT NULL,
     `description`       VARCHAR(512) NOT NULL,
-    `planter_id`        INTEGER,
     PRIMARY KEY (`plant_id`),
-    FOREIGN KEY (`planter_id`) REFERENCES `planter` (`planter_id`)
 ) ENGINE=InnoDB;
 
 CREATE TABLE `planter` (
@@ -47,4 +45,3 @@ CREATE TABLE `event_log` (
     FOREIGN KEY (`plant_id`) REFERENCES `plant` (`plant_id`),
     FOREIGN KEY (`planter_id`) REFERENCES `planter` (`planter_id`)
 ) ENGINE=InnoDB;
-
