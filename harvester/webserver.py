@@ -10,15 +10,22 @@ import time
 is_closing = False
 
 
+class MainHandler(tornado.web.RequestHandler):
+	def get(self):
+		#rows = dbutil get rows
+		self.render("index.html", entries = rows)
 
+class AddHandler(tornado.web.RequestHandler):
+	def get(self):
+		self.render('add.html')
 
-
-
-
-
-
-
-
+	def post(self):
+		event = self.get_argument(name='event')
+		veg = self.get_argument(name='veg')
+		planter = int(self.get_argument(name='planter'))
+		timelog = time.strftime('%Y-%m-%d %H:%M:%S')
+        #dbutil add row (event veg planter timelog)
+		self.redirect("/add")
 
 
 
@@ -29,7 +36,6 @@ def make_app():
 		(r'/(custom.css)', tornado.web.StaticFileHandler, {'path': './'}),
 		(r'/add', AddHandler)
 	])
-
 
 #looks for a signal
 def signal_handler(signum, frame):
@@ -44,6 +50,9 @@ def exit():
 		tornado.ioloop.IOLoop.instance().stop()
 		conn.close()
 		logging.info('exited')
+
+
+
 
 if __name__ == "__main__":
 	tornado.options.parse_command_line()

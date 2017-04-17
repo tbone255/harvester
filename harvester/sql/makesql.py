@@ -1,7 +1,7 @@
 import MySQLdb
 
 #create a connection to MySQL
-connection = MySQLdb.connect(host = "localhost", user = "root", db = "harvester")
+connection = MySQLdb.connect(host = "localhost", user = "root", passwd='toor', db = "harvester"	 )
 #create cursor object whcih lets us interact with the database
 cursor = connection.cursor()
 
@@ -27,7 +27,7 @@ cursor.execute('''
 		PRIMARY KEY (HarvestID),
 		FOREIGN KEY (EventID) 		REFERENCES EventLog(EventID)
 	);
-	
+
 	CREATE TABLE Planting (
 		PlantID		INT 			NOT NULL AUTO_INCREMENT,
 		EventID		INT 			NOT NULL,
