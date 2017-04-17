@@ -18,41 +18,71 @@
 
 		<!--navigation bar div-->
 		<div class="navbar-container">
+
 			<nav class="navbar navbar-inverse">
 				<div class="container-fluid">
+
 					<div class="navbar-header">
 						<a class="navbar-brand" href="#">Harvester</a>
 					</div>
+
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
 					</ul>
+
 					<ul class="nav navbar-nav navbar-right">
 	      				<li><a href="#"><div class="navbar-cog"><span class="glyphicon glyphicon-cog"></span></div></a></li>
 	    			</ul>
+
 	    			    <form class="navbar-form navbar-left">
      	 					<div class="form-group">
         						<input type="text" class="form-control" placeholder="Search">
       						</div>
       						<button type="submit" class="btn btn-default">Submit</button>
     					</form>
+
 	  			</div>
 			</nav>
-		<div>
+
+		</div>
 
 		<!--tab pagination div-->
 		<div class="tab-container">
+
 			<ul class="nav nav-tabs">
-				<li class="active"><a href="#">Events</a></li>
-				<li><a href="/add">Add</a></li>
+				<li class="dropdown">
+					<li class="active">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Events<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Harvests</a></li>
+							<li><a href="#">Nutrition</a></li>
+							<li><a href="#">Planting</a></li>
+						</ul>
+					</li>
+				</li>
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Add<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="/add_harvest">Add a Harvest</a></li>
+						<li><a href="/add_nutrition">Add Nutritional Information</a></li>
+						<li><a href="/add_plant">Add a New Plant</a></li>
+					</ul>
+				</li>
+
 				<li><a href="#">Remove</a></li>
+
 			</ul>
 			<br>
 		</div>
 
 		<!--table div-->
 		<div class="table-container">
+
 			<table class="table table-hover table-striped">
+
 				<thead>
+
 					<tr>
 						<th>EventID</th>
 						<th>Event</th>
@@ -61,28 +91,38 @@
 						<th>Timelog</th>
 						<th>Planter</th>
 					</tr>
+
 				</thead>
+
 				<tbody>
+
 					{% for entry in entries %}
+
 						<tr>
 		  					<td>{{ entry["EventID"] }}</td>
 		  					<td>{{ entry["Event"] }}</td>
 		  					<td>{{ entry["Vegetable"] }} </td>
-		  					<td><div style="text-align: center"><img src="{{ entry["Vegetable"] }}.png", height=30, width=30></div></td>
+		  					<td><img src="{{ entry["Vegetable"] }}.png", height=30, width=30></div></td>
 		  					<td>{{ entry["Timelog"] }}</td>
 		  					<td>{{ entry["Planter"] }}</td>
-		  					<div class="btn-group-container">
-			  					<td>
+
+		  					<td style="width: 110px;" >
+		  						<div class="btn-group-container">
 			  						<div class="btn-group">
 	  									<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span></button>
 	  									<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-remove-sign"></span></button>
 									</div>
-								</td>
-							</div>
+								</div>
+							</td>
+
 		  				</tr>
+
 					{% end %}
+
 				</tbody>
+
 			</table>
+
 		</div>
 
 	</body>

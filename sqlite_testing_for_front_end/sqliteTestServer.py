@@ -14,6 +14,8 @@ conn = sqlite3.connect('sqlitetest.db') #database file
 conn.row_factory = sqlite3.Row #row object
 c = conn.cursor()
 
+c.execute(' DELETE FROM EventLog WHERE EventID = 12; ')
+
 class MainHandler(tornado.web.RequestHandler):
 	def get(self):
 		c.execute(' SELECT * FROM EventLog ')
