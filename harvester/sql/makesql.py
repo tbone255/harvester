@@ -10,41 +10,38 @@ cursor = connection.cursor()
 #create table for tracking plant events
 cursor.execute('''
 
-	CREATE TABLE EventLog (
-		EventID 	INT 			NOT NULL AUTO_INCREMENT,
-		Event 		VARCHAR(512) 	NOT NULL,
-		Vegetable	VARCHAR(128)	NOT NULL,
-		Timelog		DATETIME		NOT NULL,
-		Planter		INT   			NOT NULL,
-		PRIMARY KEY (EventID)
-	);
+	CREATE TABLE `plant` (
+		`plant_id`			INTEGER			NOT NULL AUTO_INCREMENT,
+		`type`				VARCHAR(32)		NOT NULL,
+		`scientific_name`	VARCHAR(128)	NOT NULL,
+		`description`		VARCHAR(512)	NOT NULL,
+		PRIMARY KEY (`plant_id`)
+	) ENGINE=InnoDB;
 
-	CREATE TABLE Harvest (
-		HarvestID	INT 			NOT NULL AUTO_INCREMENT,
-		EventID		INT 			NOT NULL,
-		Amount 		INT 			NOT NULL,
-		Description VARCHAR(256),
-		PRIMARY KEY (HarvestID),
-		FOREIGN KEY (EventID) 		REFERENCES EventLog(EventID)
-	);
+	CREATE TABLE `event` (
+		`event_id`			INTEGER			NOT NULL AUTO_INCREMENT,
+		`event_type`		VARCHAR(32)		NOT NULL,
+		PRIMARY KEY (`event_id`)
+	) ENGINE=InnoDB;
 
-	CREATE TABLE Planting (
-		PlantID		INT 			NOT NULL AUTO_INCREMENT,
-		EventID		INT 			NOT NULL,
-		Amount 		INT 			NOT NULL,
-		Description VARCHAR(256),
-		PRIMARY KEY (PlantID),
-		FOREIGN KEY (EventID) 		REFERENCES EventLog(EventID)
-	);
+	CREATE TABLE `nutrition` (
+		`nutrition_id`		INTEGER			NOT NULL AUTO_INCREMENT,
+		`brand`				VARCHAR(32)		DEFAULT NULL,
+		`type`				VARCHAR(32)		NOT NULL,
+		`description`		VARCHAR(128)	NOT NULL,
+		PRIMARY KEY (`nutrition_id`)
+	) ENGINE=InnoDB;
 
-	CREATE TABLE Nutrition (
-		NutritionID INT 			NOT NULL AUTO_INCREMENT,
-		EventID 	INT 			NOT NULL,
-		Water 		BOOLEAN,
-		Fertilizer 	VARCHAR(256),
-		PRIMARY KEY (NutritionID),
-		FOREIGN KEY (EventID) 		REFERENCES EventLog(EventID)
-	);
+	CREATE TABLE `event_log` (
+		`event_log_id`		INTEGER			NOT NULL AUTO_INCREMENT,
+		`event_id`			INTEGER			NOT NULL,
+		`plant_id`			INTEGER,
+		`planter_id`		INTEGER,
+		`nutrition_id`		INTEGER			DEFAULT NULL,
+		`timestamp`			DATETIME		DEFAULT NULL,
+		`description`		VARCHAR(256),
+		PRIMARY KEY (`event_log_id`)
+	) ENGINE=InnoDB;
 
 ''')
 
