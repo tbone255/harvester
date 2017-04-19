@@ -26,3 +26,5 @@ front-end:
     (can have ability to 'group' veggies to see net weight for specific veggie over some span of time)
 
   Have graphs?
+
+have to use non-copyright images
