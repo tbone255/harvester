@@ -61,21 +61,21 @@ cursor.execute(''' INSERT INTO nutrition (brand, type, description) VALUES ("%s"
 
 
 cursor.execute(''' INSERT INTO event_log (event_id, plant_id, planter_id, timestamp, description) VALUES ("%s", "%s", "%s", "%s", "%s") '''
-				% ("11", "11", "9", "2017-04-01 10:00:00", "harvested 10oz peppers"))
+				% ("1", "5", "1", "2017-04-01 10:00:00", "harvested 10oz peppers"))
 
-cursor.execute(''' INSERT INTO event_log (event_id, plant_id, planter_id, timestamp, description) VALUES ("%s", "%s", "%s", "%s", "%s") '''
-				% ("12", "12", "10", "2017-04-02 1:30:00", "watered plants"))
+cursor.execute(''' INSERT INTO event_log (event_id, planter_id, timestamp, description) VALUES ("%s", "%s", "%s", "%s") '''
+				% ("2", "2", "2017-04-02 1:30:00", "watered planter 2"))
 
-#
-#cursor.execute(''' INSERT INTO event_log (event_id, plant_id, planter_id, nutrition_id, tstamp, description) VALUES (%s, %s, %s, %s, %s, %s) '''
-#				% ("13", "13", "11", "", "", ""))
-#
-#cursor.execute(''' INSERT INTO event_log (event_id, plant_id, planter_id, nutrition_id, tstamp, description) VALUES (%s, %s, %s, %s, %s, %s) '''
-#				% ("14", "14", "9", "", "", ""))
-#
-#cursor.execute(''' INSERT INTO event_log (event_id, plant_id, planter_id, nutrition_id, tstamp, description) VALUES (%s, %s, %s, %s, %s, %s) '''
-#				% ("15", "15", "9", "", "", ""))
-#
+cursor.execute(''' INSERT INTO event_log (event_id, planter_id, nutrition_id, timestamp, description) VALUES ("%s", "%s", "%s", "%s", "%s") '''
+				% ("3", "1", "1", "2017-05-20 4:00:00", "fed peats 0-11-11 to beefsteak tomatoes"))
+
+cursor.execute(''' INSERT INTO event_log (event_id, timestamp, description) VALUES ("%s", "%s", "%s") '''
+				% ("4", "2017-06-01 3:30:00", "f5 tornado ravaged lands, greenhouse is gone"))
+
+cursor.execute(''' INSERT INTO event_log (event_id, timestamp, description) VALUES ("%s", "%s", "%s") '''
+				% ("5", "2017-06-01 3:30:00", "threw manure into compost"))
+
+
 connection.commit()
 connection.close()
 
