@@ -1,7 +1,7 @@
 import MySQLdb
 
 #create a connection to MySQL
-connection = MySQLdb.connect(host = "localhost", user = "root", db = "harvester"	 )
+connection = MySQLdb.connect(host = "localhost", user = "root", db = "harvester")
 #create cursor object whcih lets us interact with the database
 cursor = connection.cursor()
 
