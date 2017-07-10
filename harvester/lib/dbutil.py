@@ -86,61 +86,46 @@ class DBUtil(object):
         result = self._execute_select(query)
         return result
       
-
-    def get_plant_by_id(self, plant_id):
-        '''
-        Return plant given plant_id
-        '''
-        query = select([plant_table]).where(
-            plant_table.c.plant_id == plant_id
-        )
-        result = self._execute_select(query)
-        return result
-
-
-    def get_event_log_by_id(self, event_log_id):
-        '''
-        Return event log given event_log_id
-        '''
-        query = select([event_log_table]).where(
-            event_log_table.c.event_log_id == event_log_id
-        )
-        result = self._execute_select(query)
-        return result
-      
-      
     def get_plant_event_log(self, plant_id):
         '''
-        Return event log of plant, given plant_id
+        Return event log of plant given plant_id
         '''
         query = select([event_log_table]).where(
-            event_log.plant_id == plant_id)
-        result = self._execute_select(query).fetchall()
+            event_log_table.c.plant_id == plant_id
+        )
+        result = self._execute_select(query)
         return result
         
-        
-        
-        
-        
-        
-    # get water schedule of a plant within a given date range
-    
-    # get plants in planter
+    def get_water_schedule_of_plant_by_date(self, plant_id, start_date, end_date):
+        '''
+        Return all dates of which a planter was watered given a date range
+        '''
+        datetime_start_object = datetime.strptime(start_date, '%Y-%m-%d %H:%M:%S')
+        datetime_end_object = datetime.strptime(end_date, '%Y-%m-%d %H:%M:%S')
+
+        query = select([event_log_table]).where(
+            event_log_table.c.timestamp >= datetime_start_object).where(
+            event_log_table.c.timestamp <= datetime_end_object).where(
+            event_log_table.c.plant_id == plant_id
+        )
+        result = self._execute_select(query)
+        return result
+
     def get_plants_in_planter(self, planter_id):
         '''
-        Return all plants held in a planter
+        Return all plants within a given planter
         '''
-        query = select([planter_table]).where(
-            
-    
+        query = select([event_log_table]).where(
+            event_log_table.c.planter_id == planter_id
+        )
+        result = self._execute_select(query)
+        return result
+
     # get fertilize schedule of plant within a given date range
     
     # get a list of fertilizers available
     
     # get a list of events available
-    #taha
-    def get_event_types(self):
-        query = select([event])
     
     # get a list of plants available
     
@@ -176,7 +161,7 @@ class DBUtil(object):
         return result
         
         
-    def add_planter(self, x=None, y=None, length, width):
+    def add_planter(self, length, width, x=None, y=None):
         '''
         Insert a planter
         
@@ -220,7 +205,7 @@ class DBUtil(object):
         return result
       
       
-    def add_event_log(self, event, plant=None, planter=None, nutrition=None, description):
+    def add_event_log(self, event, description, plant=None, planter=None, nutrition=None):
         '''
         Insert an event to the event log
         

@@ -8,8 +8,7 @@ from dbutil import DBUtil
 def main():
     dbutil = DBUtil(args.db)
 
-
-    result = dbutil.get_event_log_by_id(1)
+    result = dbutil.get_plants_in_planter(1)
     pprint.pprint(result)
 
 
