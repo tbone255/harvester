@@ -5,7 +5,7 @@ CREATE TABLE `plant` (
     `type`              VARCHAR(32)  NOT NULL,
     `scientific_name`   VARCHAR(128) NOT NULL,
     `description`       VARCHAR(512) NOT NULL,
-    PRIMARY KEY (`plant_id`),
+    PRIMARY KEY (`plant_id`)
 ) ENGINE=InnoDB;
 
 CREATE TABLE `planter` (
