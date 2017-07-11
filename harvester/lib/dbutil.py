@@ -98,7 +98,7 @@ class DBUtil(object):
         
     def get_water_schedule_of_plant_by_date(self, plant_id, start_date, end_date):
         '''
-        Return all dates of which a planter was watered given a date range
+        Return all dates of which a plant was watered given a date range
         '''
         datetime_start_object = datetime.strptime(start_date, '%Y-%m-%d %H:%M:%S')
         datetime_end_object = datetime.strptime(end_date, '%Y-%m-%d %H:%M:%S')
@@ -106,32 +106,81 @@ class DBUtil(object):
         query = select([event_log_table]).where(
             event_log_table.c.timestamp >= datetime_start_object).where(
             event_log_table.c.timestamp <= datetime_end_object).where(
-            event_log_table.c.plant_id == plant_id
+            event_log_table.c.plant_id == plant_id).where(
+            event_log_table.c.event_id == 2
         )
         result = self._execute_select(query)
         return result
 
     def get_plants_in_planter(self, planter_id):
         '''
-        Return all plants within a given planter
+        Return all plants (plant_id) within a given planter
         '''
         query = select([event_log_table]).where(
-            event_log_table.c.planter_id == planter_id
+            event_log_table.c.planter_id == planter_id).where(
+            event_log_table.c.plant_id != None
         )
         result = self._execute_select(query)
         return result
 
-    # get fertilize schedule of plant within a given date range
+    def get_fertilize_schedule_of_plant_by_date(self, plant_id, start_date, end_date):
+        '''
+        Return all dates of which a plant was fertilized given a date range
+        '''
+        datetime_start_object = datetime.strptime(start_date, '%Y-%m-%d %H:%M:%S')
+        datetime_end_object = datetime.strptime(end_date, '%Y-%m-%d %H:%M:%S')
+
+        query = select([event_log_table]).where(
+            event_log_table.c.timestamp >= datetime_start_object).where(
+            event_log_table.c.timestamp <= datetime_end_object).where(
+            event_log_table.c.plant_id == plant_id).where(
+            event_log_table.c.event_id == 3
+        )
+        result = self._execute_select(query)
+        return result
     
-    # get a list of fertilizers available
-    
-    # get a list of events available
-    
-    # get a list of plants available
-    
-    # get a list of planters available
-    
-    # get every type of nutrition a plant has been given
+    def get_fertilizers(self):
+        '''
+        Return a list of all fertizilers
+        '''
+        query = select([nutrition_table.c.brand, nutrition_table.c.type])
+        result = self._execute_select(query)
+        return result
+
+    def get_events(self):
+        '''
+        Return a list of all events available
+        '''
+        query = select([event_table.c.event_type])
+        result = self._execute_select(query)
+        return result
+
+    def get_plants(self):
+        '''
+        Return a list of plants available
+        '''
+        query = select([plant_table.c.type])
+        result = self._execute_select(query)
+        return result
+
+    def get_planters(self):
+        '''
+        Return a list of all planters available
+        '''
+        query = select([planter_table.c.planter_id])
+        result = self._execute_select(query)
+        return result
+
+    def get_nutrition_for_plant(self, plant_id):
+        '''
+        Return a list every type of nutrition a plant has been given
+        '''
+        query = select([nutrition_table.c.brand, nutrition_table.c.type]).where(
+            nutrition_table.c.nutrition_id.in_(select([event_log_table.c.nutrition_id]))).where(
+            event_log_table.c.plant_id == plant_id
+        ).distinct()
+        result = self._execute_select(query)
+        return result
     
     # TODO once harvest weight is added
     # 1. get harvest amount (in lbs) of a plant

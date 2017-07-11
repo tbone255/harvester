@@ -8,7 +8,7 @@ from dbutil import DBUtil
 def main():
     dbutil = DBUtil(args.db)
 
-    result = dbutil.get_plants_in_planter(1)
+    result = dbutil.get_nutrition_for_plant(1)
     pprint.pprint(result)
 
 
