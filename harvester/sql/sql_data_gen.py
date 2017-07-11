@@ -5,6 +5,8 @@ connection = MySQLdb.connect(host = "localhost", user = "root", db = "harvester"
 #create cursor object whcih lets us interact with the database
 cursor = connection.cursor()
 
+"""
+
 cursor.execute(''' INSERT INTO plant (type, scientific_name, description) VALUES ("%s", "%s", "%s") ''' 
 				%  ("Beef Tomato", "Solanum lycopersicum", "a big tomato"))
 
@@ -74,6 +76,12 @@ cursor.execute(''' INSERT INTO event_log (event_id, timestamp, description) VALU
 
 cursor.execute(''' INSERT INTO event_log (event_id, timestamp, description) VALUES ("%s", "%s", "%s") '''
 				% ("5", "2017-06-01 3:30:00", "threw manure into compost"))
+
+"""
+
+cursor.execute(''' INSERT INTO event_log (event_id, plant_id, nutrition_id, timestamp, description) VALUES ("%s", "%s", "%s", "%s", "%s") '''
+				% ("3", "1", "1", "2017-05-20 4:00:00", "fed peats 0-11-11 to beefsteak tomatoes"))
+
 
 
 connection.commit()
