@@ -1,33 +1,22 @@
-<div class="container-fullwidth">
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>                        
-          </button>
-
-        </button>
-        <a class="navbar-brand" href="#"><img [src]="LOGO">
-        </a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse" id="myNavbar">
-        <ul >
-          <li><a routerLink="home">Home</a></li>
-          <li><a routerLink="inventory">Inventory</a></li>
-          <li><a routerLink="about">About</a></li>
-          <li><a routerLink="admin">Admin</a></li>
-        </ul>
-      </div>
-      <!--/.nav-collapse -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><img [src]="LOGO"></a>
     </div>
-    <!--/.container-fluid -->
-  </nav>
-</div>
-
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a routerLink="home">Home</a></li>
+        <li><a routerLink="inventory">Inventory</a></li>
+        <li><a routerLink="about">About</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a routerLink="admin">Admin</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
