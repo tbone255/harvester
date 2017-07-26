@@ -12,7 +12,7 @@ export const router: Routes = [
 	{ path: 'home', component: HomeComponent },
 	{ path: 'inventory', component: InventoryComponent },
 	{ path: 'about', component: AboutComponent },
-	{ path: 'admin', component: AdminComponent }
+	{ path: 'admin', component: AdminComponent },
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(router);
