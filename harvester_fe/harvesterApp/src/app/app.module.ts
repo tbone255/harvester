@@ -9,10 +9,12 @@ import { AboutComponent } from './components/about/about.component';
 import { AdminComponent } from './components/admin/admin.component';
 
 import { routes } from './app.router';
+import { AddComponent } from './components/add/add.component';
+import { AddDropdownComponent } from './components/add-dropdown/add-dropdown.component';
 
 @NgModule({
   declarations: [
-    AppComponent, NavbarComponent, HomeComponent, InventoryComponent, AboutComponent, AdminComponent
+    AppComponent, NavbarComponent, HomeComponent, InventoryComponent, AboutComponent, AdminComponent, AddComponent, AddDropdownComponent
   ],
   imports: [
     BrowserModule,
