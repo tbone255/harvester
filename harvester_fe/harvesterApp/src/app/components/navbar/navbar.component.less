@@ -1,21 +1,33 @@
+// Theme Variables
+@darkPrimaryColor:   #616161;
+@primaryColor:       #E0E0E0;
+@lightPrimaryColor:  #F5F5F5;
+@textPrimaryColor:   #212121;
+@accentColor:        #4CAF50;
+@primaryTextColor:   #212121;;
+@secondaryTextColor: #757575;
+@dividerColor:       #BDBDBD;
+
+
 li a:hover:not(.active) {
-    background-color: #4CAF50;
+    background-color: lighten(@accentColor, 15);
     color: white;
 }
 
 .navbar-nav .active {
-    background-color: #4CAF50;
+    background-color: @accentColor;
     color: white;
 }
 
 .navbar {
-    background: #e0e0e0;
+    background: @primaryColor;
+    color: @primaryTextColor
 }
 .navbar-brand {
   padding: 0px;
 }
 
-.navbar-brand>img {
+.navbar-brand > img {
   height: 100%;
   padding: 7px;
   width: auto;
