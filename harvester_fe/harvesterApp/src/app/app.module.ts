@@ -9,10 +9,11 @@ import { AboutComponent } from './components/about/about.component';
 import { AdminComponent } from './components/admin/admin.component';
 
 import { routes } from './app.router';
+import { AddPlantComponent } from './components/add-plant/add-plant.component';
 
 @NgModule({
   declarations: [
-    AppComponent, NavbarComponent, HomeComponent, InventoryComponent, AboutComponent, AdminComponent
+    AppComponent, NavbarComponent, HomeComponent, InventoryComponent, AboutComponent, AdminComponent, AddPlantComponent
   ],
   imports: [
     BrowserModule,

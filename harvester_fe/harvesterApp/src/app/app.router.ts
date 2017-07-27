@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { InventoryComponent } from './components/inventory/inventory.component';
 import { AboutComponent } from './components/about/about.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { AddPlantComponent } from './components/add-plant/add-plant.component';
 
 export const router: Routes = [
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -13,6 +14,7 @@ export const router: Routes = [
 	{ path: 'inventory', component: InventoryComponent },
 	{ path: 'about', component: AboutComponent },
 	{ path: 'admin', component: AdminComponent },
+	{ path: 'add-plant', component: AddPlantComponent },
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(router);
