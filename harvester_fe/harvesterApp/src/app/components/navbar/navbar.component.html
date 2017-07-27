@@ -10,9 +10,21 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
+
         <li><a routerLink="home" routerLinkActive='active'>Home</a></li>
+
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Add<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Plant Type</a></li>
+            <li><a href="#">Nutrition Type</a></li>
+            <li><a href="#">Event</a></li>
+          </ul>
+        </li>
+
         <li><a routerLink="inventory" routerLinkActive='active'>Inventory</a></li>
+        
         <li><a routerLink="about" routerLinkActive='active'>About</a></li>
+
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a routerLink="admin" routerLinkActive='active'>Admin</a></li>
