@@ -11,10 +11,11 @@ import { AddNutritionComponent } from './components/add-nutrition/add-nutrition.
 
 import { routes } from './app.router';
 import { AddPlantComponent } from './components/add-plant/add-plant.component';
+import { AddEventComponent } from './components/add-event/add-event.component';
 
 @NgModule({
   declarations: [
-    AppComponent, NavbarComponent, HomeComponent, InventoryComponent, AboutComponent, AdminComponent, AddPlantComponent, AddNutritionComponent
+    AppComponent, NavbarComponent, HomeComponent, InventoryComponent, AboutComponent, AdminComponent, AddPlantComponent, AddNutritionComponent, AddEventComponent
   ],
   imports: [
     BrowserModule,
