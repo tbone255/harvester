@@ -9,6 +9,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AddPlantComponent } from './components/add-plant/add-plant.component';
 import { AddNutritionComponent } from './components/add-nutrition/add-nutrition.component';
 import { AddEventComponent } from './components/add-event/add-event.component';
+import { AddEventLogComponent } from './components/add-event-log/add-event-log.component';
 
 export const router: Routes = [
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,7 +19,8 @@ export const router: Routes = [
 	{ path: 'admin', component: AdminComponent },
 	{ path: 'add-plant', component: AddPlantComponent },
 	{ path: 'add-nutrition', component: AddNutritionComponent },
-	{ path: 'add-event', component: AddEventComponent }
+	{ path: 'add-event', component: AddEventComponent },
+	{ path: 'add-event-log', component: AddEventLogComponent },
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(router);
